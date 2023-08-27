@@ -1,0 +1,123 @@
+/* 
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map. 
+ */
+#map {
+    height: 100%;
+  }
+
+  /* 
+   * Optional: Makes the sample page fill the window. 
+   */
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+/*Floating Menu Design*/
+.floating-menu {
+font-family: sans-serif;
+background: white;
+margin-top: 130px;
+margin-left: 40px;
+width: 350px;
+height: 90%;
+z-index: 1;
+position: absolute;
+border-radius: 5px;
+overflow-y: scroll;
+padding-top: 10px;
+display: block;
+}
+
+.floating-menu a {
+font-size: 0.9rem;
+display: block;
+margin: 0.5rem;
+color: black;
+}
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s;
+}
+
+.menu-item:hover, .clickable-container:hover {
+    background-color: #f0f0f0;
+}
+
+.menu-item.active {
+    background-color: #f0f0f0;
+}
+
+#menu-pic {
+    margin-right: 15px;
+}
+
+.menu-item a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    cursor: pointer;
+}
+
+.menu-item-title {
+    font-size: large;
+    font-weight: bold;
+}
+
+/*scroll bar design*/
+::-webkit-scrollbar {
+    width: 20px;
+}
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+.wrapper {
+    position: fixed;
+    width: 350px;
+    top: 5%;
+    left: 40px;
+    z-index: 1;
+  }
+  
+  .wrapper .search-input {
+    background: white;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0px 1px 5px 3px rgba(0,0,0,0,0.12);
+  }
+  
+  .search-input input{
+    height: 55px;
+    width: 100%;
+    outline: none; 
+    border: none;
+    border-radius: 8px;
+    padding: 0 60px 0 20px;
+    font-size: 17px;
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.2);
+  }
+  
+  #contentFood {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#contentFood li{
+    display: block;
+}
+  

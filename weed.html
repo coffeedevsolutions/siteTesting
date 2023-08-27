@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Working Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script type="module" src="./boozemap.js"></script>
+    <script type="module" src="./weedmap.js"></script>
+</head>
+    
+
+  <body>
+    <nav id="navbar" class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html">Proof of Concept</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="navbar-item">
+                <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+              </li>
+              <li class="navbar-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Whatcha looking for?
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="./main.html">Food</a></li>
+                  <li><a class="dropdown-item" href="./booze.html">Alcohol</a></li>
+                  <li><a class="dropdown-item" href="#">Cannabis</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Suggest a New Location!</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <!--Floating Search-->
+      <!--<div class="search-container">
+        <input type="text" id="search-input" placeholder="Search...">
+      </div>-->
+   
+      <!--Floating Menu-->
+      <nav id="floating-menu" class="floating-menu">
+        <div id="contentFood" class="content" data-bs-spy="scroll" data-bs-target="#floatingMenu" data-bs-smooth-scroll="true">
+            <div id="link1" class="menu-item content">
+                <a href="#">
+                    <img id="menu-pic" src="./IconAssets/fire.svg">
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">BesaMe Wellness Medical Marijuana Dispensary - North KC</div>
+                        <div class="menu-item-description">The bla bla bla bla is a local  establishment with many daily deals.</div>
+                    </div>
+                </a>  
+            </div>
+            <div id="link2" class="menu-item">
+                <a href="#">
+                    <img id="menu-pic" src="./IconAssets/fire.svg">
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">From The Earth Dispensary Downtown</div>
+                        <div class="menu-item-description">The bla bla bla bla is a local  establishment with many daily deals.</div>
+                    </div>
+                </a>  
+            </div>
+            <div id="link3" class="menu-item">
+                <a href="#">
+                    <img id="menu-pic" src="./IconAssets/fire.svg">
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">HomeState Dispensary</div>
+                        <div class="menu-item-description">The bla bla bla bla is a local  establishment with many daily deals.</div>
+                    </div>
+                </a>  
+            </div>
+            <div id="link4" class="menu-item">
+                <a href="#">
+                    <img id="menu-pic" src="./IconAssets/fire.svg">
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">West Bottoms Hemp Company</div>
+                        <div class="menu-item-description">The bla bla bla bla is a local  establishment with many daily deals.</div>
+                    </div>
+                </a>  
+            </div>
+            <div id="link5" class="menu-item">
+                <a href="#">
+                    <img id="menu-pic" src="./IconAssets/fire.svg">
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">KC Kush</div>
+                        <div class="menu-item-description">The bla bla bla bla is a local  establishment with many daily deals.</div>
+                    </div>
+                </a>  
+            </div>
+            <div id="link6" class="menu-item">
+                <a href="#">
+                    <img id="menu-pic" src="./IconAssets/fire.svg">
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">Local Cannabis Company</div>
+                        <div class="menu-item-description">The bla bla bla bla is a local  establishment with many daily deals.</div>
+                    </div>
+                </a>  
+            </div>
+        </div>
+    </nav>
+
+      <!--The div element for the map -->
+      <div id="map"></div>
+
+      <script>
+        (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+          key: "AIzaSyCO-E7llUza5TupuBMQO9xXDIE8C1XXJpc",
+          v: "weekly",
+          // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+          // Add other bootstrap parameters as needed, using camel case.
+        });
+
+      </script>
+      <!--Script element CDN for boootstrap-->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    </body>
+</html>

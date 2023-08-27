@@ -1,0 +1,20 @@
+let suggestions = [
+    "Authur Bryants",
+    "Baramee Thai Bistro",
+    "Blue Line Hockey Bar",
+    "Bristol",
+    "Garozzos",
+    "Homesteader",
+    "Kansas City Taco Company",
+    "Kobe Q",
+    "Lidias",
+    "Parlor",
+    "The Pheonix",
+    "The Quaff",
+    "BesaMe Wellness",
+    "From the Earth",
+    "HomeState",
+    "West Bottoms Hemp Co",
+    "KC Kush",
+    "Local Cannabis Co"
+];
